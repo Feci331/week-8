@@ -50,7 +50,7 @@ const data = [
         pets: ["Béli", "Medvécske", "Jégkrém"],
         mostRecentPurchase: {
             price: 20000,
-            color: "brown",
+            color: "black",
         }
     },
     {
@@ -77,7 +77,7 @@ const data = [
         pets: ["Nina", "Maci", "Fagyi"],
         mostRecentPurchase: {
             price: 10000,
-            color: "red",
+            color: "black",
         }
     },
     {
@@ -144,4 +144,33 @@ function getRichPeople(arraOfPeople, minimumValue) {
     return resulte
 }
 const richPeople = getRichPeople(data, 20000)
-console.log(richPeople)
+//console.log(richPeople)
+
+
+function goodREcommendationfor(arraOfPeople, newOffer) {
+    let result = []
+
+ /*    for (let i = 0; i < arraOfPeople.length; i++) {
+        //console.log(arraOfPeople[i].mostRecentPurchase)
+        if (arraOfPeople[i].mostRecentPurchase.color === newOffer.color && arraOfPeople[i].mostRecentPurchase.price > newOffer.price) {
+            
+           }
+        } result.push(arraOfPeople[i]["name"])
+    }
+ */
+
+arraOfPeople.filter((person) => person.mostRecentPurchase.color === newOffer.color && person.mostRecentPurchase.price > newOffer.price)
+return result
+}
+const newOffer1 = {
+    color: "black",
+    price: 8000
+}
+
+
+
+const goodRecommedations = goodREcommendationfor(data, newOffer1)
+console.log(goodRecommedations)
+
+
+//goodREcommendation(data, newOffer)
